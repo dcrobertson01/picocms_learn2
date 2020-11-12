@@ -2,7 +2,9 @@
         <h3>{{ meta.title }}</h3>
         <div class="metadata">
             <p class="author">{{ meta.author }}</p>
-            <p class="date">{{ meta.date_formatted }} </p>
+            <p class="date">{{ meta.date|date("l jS F, Y")}} </p>
+            {{meta.updated|last|date("l jS F, Y")}}
         </div>
+        
         <p class="excerpt">{{ content }}</p>
     </article>
