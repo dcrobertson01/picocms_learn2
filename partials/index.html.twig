@@ -1,0 +1,21 @@
+<nav class="sub_index">
+    <ul class="sub_index">
+    {% macro tree(parent) %}
+        {% import _self as utils %}
+        {% for child in parent.children %}
+            <li>
+                {% if child.page %}
+                    {{ child.page.title }}
+                {% endif %}
+                {% if child.children %}
+                    <ul>
+                        {{ utils.tree(child) }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% endmacro %}
+    {% import _self as utils %}
+    {{ utils.tree(current_page.tree_node) }}
+    </ul>
+</nav>
