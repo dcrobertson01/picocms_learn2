@@ -20,29 +20,11 @@
     }
 }
 #sidebar {
-    ul, li {
-        margin:0;
-        padding:0;
-        
-    }
     #header h1#navbar_title {
     line-height: 1;
     margin: 0;
     font-size: 2.5rem;
     }
-    .highlightable {
-        padding-right:10px;
-    }
-    /*
-    ul.topics {
-        margin: 0;
-    }
-    ul.topics > li.parent,
-    ul.topics > li.active {
-        margin-left: 0rem;
-        padding-left: 0rem; 
-    }
-    */
 }
 
 #footer {

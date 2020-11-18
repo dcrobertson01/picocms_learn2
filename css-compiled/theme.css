@@ -174,41 +174,30 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 #sidebar a.padding {
   padding: 0 1rem;
 }
-#sidebar h5 {
-  margin: 2rem 0 0;
-  position: relative;
-  line-height: 2;
+#sidebar .highlightable ul {
+  display: none;
 }
-#sidebar h5 a {
+#sidebar .highlightable > ul.topics {
   display: block;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
-#sidebar h5 i {
-  color: rgba(187, 187, 187, 0.6);
-  position: absolute;
-  right: 0.6rem;
-  top: 0.7rem;
-  font-size: 80%;
+#sidebar .highlightable > ul.topics > li {
+  display: block;
 }
-#sidebar h5.parent a {
-  background: #293038;
-  color: #c8c8c8 !important;
+#sidebar .highlightable > ul.topics > li > a {
+  font-size: 1.5rem !important;
 }
-#sidebar h5.active a {
+#sidebar .highlightable > ul.topics > li.active > a {
   background: #fff;
   color: #555 !important;
 }
-#sidebar h5.active i {
+#sidebar .highlightable > ul.topics > li.active i {
   color: #555 !important;
 }
-#sidebar h5 + ul.topics {
+#sidebar ul.topics {
   display: none;
   margin-top: 0;
 }
-#sidebar h5.parent + ul.topics, #sidebar h5.active + ul.topics {
+#sidebar .parent + ul.topics, #sidebar .active + ul.topics {
   display: block;
 }
 #sidebar ul {
@@ -236,7 +225,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   display: none;
   padding-bottom: 0;
 }
-#sidebar ul.topics > li.parent ul, #sidebar ul.topics > li.active ul {
+#sidebar ul.topics > li.parent > ul, #sidebar ul.topics > li.active > ul {
   display: block;
 }
 #sidebar ul.topics > li > a {
@@ -845,7 +834,7 @@ td {
 
 /*************** SCROLLBAR BASE CSS ***************/
 .highlightable {
-  padding: 25px 0 15px;
+  padding: 25px 10px 15px 0px;
 }
 
 .scroll-wrapper {
@@ -1189,29 +1178,10 @@ pre .copy-to-clipboard:hover {
   float: right;
 }
 
-#sidebar {
-  /*
-  ul.topics {
-      margin: 0;
-  }
-  ul.topics > li.parent,
-  ul.topics > li.active {
-      margin-left: 0rem;
-      padding-left: 0rem; 
-  }
-  */
-}
-#sidebar ul, #sidebar li {
-  margin: 0;
-  padding: 0;
-}
 #sidebar #header h1#navbar_title {
   line-height: 1;
   margin: 0;
   font-size: 2.5rem;
-}
-#sidebar .highlightable {
-  padding-right: 10px;
 }
 
 #footer .button {
