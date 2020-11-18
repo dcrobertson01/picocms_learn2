@@ -1,0 +1,53 @@
+{% if meta.header.image.url %}
+    {% set image = meta.header.image %}
+
+    {% if not image.author %}
+        {% set author = meta.author %}
+    {% else %}
+        {% set author = image.author %}
+    {% endif %}
+
+    {% if not image.source %}
+        {% set source = meta.source %}
+    {% else %}
+        {% set source = image.source %}
+    {% endif %}
+    
+    {% if not image.title %}
+        {% set title = meta.title ~" headeritle image" %}
+    {% else %}
+        {% set title = image.title %}
+    {% endif %}
+    
+    {% if image.license.cc == 'CC BY 4.0' %}
+        {% set license_html %}
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        {% endset %}
+    {% else %}
+        {% if not image.license.url %}
+            {% set license_url = config.license.url %}
+        {% else %}
+            {% set license_url = image.license.url %}
+        {% endif %}
+        
+        {% if not image.license.text %}
+            {% set license_text = config.license.text %}
+        {% else %}
+            {% set license_text = image.license.text %}
+        {% endif %}
+        {% set license_html %}
+        {% endset %}
+    {% endif %}
+
+    <div id="header-image">
+        <img src="{{assets_url}}{{image.url}}" alt="{{image.alt}}">
+        <div class="header-image-credit">
+            <p class="header-image-caption">{{image.title}}</p>
+            Image:
+            <a href="{{source}}" alt="Image Source">
+            {{ author }}
+            </a>
+            {{ license_html }}
+        </div>
+    </div>
+{% endif %}

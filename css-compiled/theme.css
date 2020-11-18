@@ -215,6 +215,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   list-style: none;
   padding: 0;
   margin: 0;
+  display: block;
 }
 #sidebar ul.searched a {
   color: #888888;
@@ -224,9 +225,6 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 }
 #sidebar ul.searched .search-match a:hover {
   color: #eeeeee;
-}
-#sidebar ul.topics {
-  margin: 0 1rem;
 }
 #sidebar ul.topics.searched ul {
   display: block;
@@ -238,12 +236,13 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   display: none;
   padding-bottom: 0;
 }
-#sidebar ul.topics li.parent ul, #sidebar ul.topics > li.active ul {
+#sidebar ul.topics > li.parent ul, #sidebar ul.topics > li.active ul {
   display: block;
 }
 #sidebar ul.topics > li > a {
   line-height: 2rem;
   font-size: 1.1rem;
+  padding-left: 1rem;
 }
 #sidebar ul.topics > li > a b {
   opacity: 0.5;
@@ -254,18 +253,16 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 }
 #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
   background: #2d353e;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+}
+#sidebar ul.topics > li > ul > li > a {
+  padding-left: 2rem;
+}
+#sidebar ul.topics > li > ul > li > ul > li > a {
+  padding-left: 3rem;
 }
 #sidebar ul li.active > a {
   background: #fff;
   color: #555 !important;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 #sidebar ul li {
   padding: 0;
@@ -299,7 +296,6 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   display: inline;
 }
 #sidebar ul li li {
-  padding-left: 1rem;
   text-indent: 0.2rem;
 }
 
@@ -1193,10 +1189,29 @@ pre .copy-to-clipboard:hover {
   float: right;
 }
 
+#sidebar {
+  /*
+  ul.topics {
+      margin: 0;
+  }
+  ul.topics > li.parent,
+  ul.topics > li.active {
+      margin-left: 0rem;
+      padding-left: 0rem; 
+  }
+  */
+}
+#sidebar ul, #sidebar li {
+  margin: 0;
+  padding: 0;
+}
 #sidebar #header h1#navbar_title {
   line-height: 1;
   margin: 0;
   font-size: 2.5rem;
+}
+#sidebar .highlightable {
+  padding-right: 10px;
 }
 
 #footer .button {
@@ -1223,6 +1238,19 @@ pre .copy-to-clipboard:hover {
 }
 .searchbox button i {
   color: #aaa;
+}
+
+article ol li {
+  margin-bottom: 1.7em;
+}
+article ol li::marker {
+  font-weight: 900;
+}
+article ol li::before {
+  background-color: red;
+}
+article ol p {
+  margin: 0;
 }
 
 /*# sourceMappingURL=theme.css.map */
