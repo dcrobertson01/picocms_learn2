@@ -1,10 +1,15 @@
     <article class="post">
         <h3>{{ meta.title }}</h3>
+
         <div class="metadata">
             <p class="author">{{ meta.author }}</p>
             <p class="date">{{ meta.date_formatted }} </p>
         </div>
-        <p class="excerpt">{{ content }}</p>
+
+        {% include "partials/content.page_header.html.twig" %}
+        
+        {{ content }}
+
     </article>
     {% block index %}
         {% include 'partials/index.html.twig' %}

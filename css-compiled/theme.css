@@ -1222,5 +1222,54 @@ article ol li::before {
 article ol p {
   margin: 0;
 }
+article #header-image {
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+}
+article #header-image * {
+  margin: 0;
+  padding: 0px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+article #header-image .header-image > img {
+  width: 100%;
+}
+article #header-image .header-image-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+article #header-image > img {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: lightgray;
+  margin: 20px auto 0;
+  width: 100%;
+}
+article #header-image div.header-image-credit {
+  text-align: left;
+  position: absolute;
+  border: black 1px solid;
+  visibility: hidden;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 500ms, visibility 1000ms;
+}
+article #header-image .header-image-license img {
+  display: inline;
+}
+article #header-image:hover div.header-image-credit {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 500ms, visibility 1000ms;
+}
+article code {
+  padding: 0;
+}
 
 /*# sourceMappingURL=theme.css.map */

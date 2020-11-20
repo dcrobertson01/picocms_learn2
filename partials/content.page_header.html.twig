@@ -18,10 +18,19 @@
     {% else %}
         {% set title = image.title %}
     {% endif %}
+
+     {% if not image.alt %}
+        {% set alt = title ~" headeritle image" %}
+    {% else %}
+        {% set alt = image.alt %}
+    {% endif %}
     
     {% if image.license.cc == 'CC BY 4.0' %}
         {% set license_html %}
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License
+            </a>.
         {% endset %}
     {% else %}
         {% if not image.license.url %}
@@ -40,14 +49,17 @@
     {% endif %}
 
     <div id="header-image">
-        <img src="{{assets_url}}{{image.url}}" alt="{{image.alt}}">
+        <div class="header-image">
+            <img src="{{assets_url}}{{image.url}}" alt="{{image.alt}}">
+        </div>
         <div class="header-image-credit">
-            <p class="header-image-caption">{{image.title}}</p>
+            <p class="header-image-title">{{image.title}}</p>
+            <p class="header-image-description">{{ alt }}
             Image:
             <a href="{{source}}" alt="Image Source">
             {{ author }}
             </a>
-            {{ license_html }}
+            <p class="header-image-license">{{ license_html }}</p>
         </div>
     </div>
 {% endif %}

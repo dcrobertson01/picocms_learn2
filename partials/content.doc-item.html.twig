@@ -1,5 +1,6 @@
     <article class="post">
         <h3>{{ meta.title }}</h3>
+        {% include "partials/content.page_header.html.twig" %}
         <div class="metadata">
             <p class="author">{{ meta.author }}</p>
             <p class="date">{{ meta.date|date("l jS F, Y")}} </p>
