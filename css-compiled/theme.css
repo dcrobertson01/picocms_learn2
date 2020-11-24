@@ -1177,6 +1177,75 @@ pre .copy-to-clipboard:hover {
 #body .post .metadata p.date {
   float: right;
 }
+#body nav.sub-nav,
+#body div#change-log {
+  background-color: #19a8e6;
+  padding-left: 10px;
+  /*        #change-log {
+
+
+
+                  +input +ul {
+                      display: none;
+                      visibility: hidden;
+                  }   
+                  +input:checked +ul {
+                      display: block;
+                      visibility: visible;
+                  }
+
+                  &:checked i:before {
+                  content:'\f107';
+                  } 
+
+              }
+          input ~ .ding i:before {
+              content:"hi";
+          }
+
+  */
+}
+#body nav.sub-nav ul,
+#body div#change-log ul {
+  margin-top: 0;
+  display: none;
+  visibility: hidden;
+}
+#body nav.sub-nav li,
+#body div#change-log li {
+  font-size: smaller;
+  font-weight: 900;
+}
+#body nav.sub-nav a,
+#body div#change-log a {
+  color: #fff;
+}
+#body nav.sub-nav .heading,
+#body div#change-log .heading {
+  font-size: larger;
+  font-weight: 900;
+}
+#body nav.sub-nav .heading i,
+#body div#change-log .heading i {
+  width: 20px;
+}
+#body nav.sub-nav input,
+#body div#change-log input {
+  display: none;
+}
+#body nav.sub-nav input:checked + .heading i:before,
+#body div#change-log input:checked + .heading i:before {
+  content: "";
+}
+#body nav.sub-nav input:checked ~ ul,
+#body div#change-log input:checked ~ ul {
+  display: block;
+  visibility: visible;
+}
+#body nav.sub-nav input:checked + heading i:before,
+#body div#change-log input:checked + heading i:before {
+  content: "wf";
+}
 
 #sidebar #header h1#navbar_title {
   line-height: 1;

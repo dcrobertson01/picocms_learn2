@@ -1,21 +1,31 @@
-<nav class="sub_index">
-    <ul class="sub_index">
-    {% macro tree(parent) %}
-        {% import _self as utils %}
-        {% for child in parent.children %}
-            <li>
-                {% if child.page %}
-                    {{ child.page.title }}
-                {% endif %}
-                {% if child.children %}
-                    <ul>
-                        {{ utils.tree(child) }}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-    {% endmacro %}
-    {% import _self as utils %}
-    {{ utils.tree(current_page.tree_node) }}
-    </ul>
+<nav class="sub-nav">
+
+        <input id="_1" type="checkbox" /> 
+        <label class="heading" for="_1"> 
+            <i class="fa fa-angle-right"></i>
+            In this section:
+        </label>
+        <ul class="sub-nav">
+            {% macro tree(parent) %}
+                {% import _self as utils %}
+                {% for child in parent.children %}
+                    <li>
+                        {% if child.page %}
+                            <a href="{{child.page.url }}">
+                                {{ child.page.title }}
+                            </a>
+                        {% endif %}
+                        {% if child.children %}
+                            <ul>
+                                {{ utils.tree(child) }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% endmacro %}
+            {% import _self as utils %}
+            {{ utils.tree(current_page.tree_node) }}
+        </ul>
+    </div>
 </nav>
+

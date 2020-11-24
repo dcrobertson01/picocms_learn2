@@ -4,8 +4,26 @@
         <div class="metadata">
             <p class="author">{{ meta.author }}</p>
             <p class="date">{{ meta.date|date("l jS F, Y")}} </p>
-            <p class="modified">Last modified: {{meta.modified|last|date("l jS F, Y")}}
         </div>
 
-        <p class="excerpt">{{ content }}</p>
+        <p class="">{{ content }}</p>
     </article>
+
+    {% if meta.changelog %}
+        <div id="change-log">
+
+            <input id="_1" type="checkbox"> 
+            <label class="heading" for="_1"> 
+                <i class="fa fa-angle-right"></i>
+                Change Log
+            </label>
+            <ul>
+                {% for change in meta.changelog %}
+                    <li>
+                    {{ change.date }}<br />
+                    {{ change.change }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div<        
+    {% endif %}

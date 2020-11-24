@@ -18,6 +18,75 @@
 
         }
     }
+
+    nav.sub-nav,
+    div#change-log {
+        // not the sidebar navigation, but the in-page sub nav
+        //display:block;
+        //float:right;
+        background-color: $showcase-bg;
+        padding-left: 10px;
+        ul {
+            margin-top:0;
+            display: none;
+            visibility: hidden;
+        }
+        li {
+            font-size: smaller;
+            font-weight: 900;
+        }
+        a   { color: $showcase-text;
+        }
+
+        .heading{
+            font-size: larger;
+            font-weight: 900;
+            i {
+                width:20px;
+            }
+        }
+
+        input {
+            display:none;
+            &:checked +.heading i:before
+            {
+                content:'\f107';
+            }
+            
+            &:checked ~ul {
+                display: block;
+                visibility: visible;
+            }
+        }
+        
+        input:checked +heading i:before
+            {
+                content:'wf';
+            }
+        /*        #change-log {
+                
+
+
+                +input +ul {
+                    display: none;
+                    visibility: hidden;
+                }   
+                +input:checked +ul {
+                    display: block;
+                    visibility: visible;
+                }
+                
+                &:checked i:before {
+                content:'\f107';
+                } 
+            
+            }
+        input ~ .ding i:before {
+            content:"hi";
+        }
+        
+*/    }
+
 }
 #sidebar {
     #header h1#navbar_title {
