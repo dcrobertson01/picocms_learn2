@@ -1161,6 +1161,11 @@ pre .copy-to-clipboard:hover {
   transform-style: preserve-3d;
 }
 
+body #top-bar #breadcrumbs,
+body #top-bar #top-github-link {
+  display: inline-block;
+}
+
 #body .post > h3,
 #body .post .metadata * {
   margin: 0;
